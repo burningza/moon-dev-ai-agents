@@ -29,3 +29,6 @@ uvicorn[standard]
 jinja2
 websockets
 apscheduler
+
+# Kimi K2
+openai>=1.0

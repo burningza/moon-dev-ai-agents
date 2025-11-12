@@ -161,8 +161,9 @@ class MoonshotModel(BaseModel):
             # Return as ModelResponse
             return ModelResponse(
                 content=content,
-                model=self.model_name,
-                tokens_used=data.get("usage", {}).get("total_tokens", 0)
+                raw_response=data,
+                model_name=self.model_name,
+                usage={"total_tokens": data.get("usage", {}).get("total_tokens", 0)}
             )
             
         except requests.exceptions.Timeout:
