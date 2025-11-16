@@ -27,7 +27,7 @@ googleapis-common-protos==1.63.0
 fastapi
 uvicorn[standard]
 jinja2
-websockets
+websocket-client
 apscheduler
 
 # Kimi K2

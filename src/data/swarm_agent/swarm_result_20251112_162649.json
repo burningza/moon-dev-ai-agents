@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-11-12T16:26:49.281486",
+  "prompt": "Analyze these 3 Polymarket markets and provide your predictions:\n\nMarket 1:\nTitle: Will Elon Musk post 160-179 tweets from November 7 to November 14, 2025?\nRecent trade: $600.00 on Yes\nLink: https://polymarket.com/event/elon-musk-of-tweets-november-7-november-14\n\nMarket 2:\nTitle: Wizards vs. Rockets: O/U 233.5\nRecent trade: $2,729.33 on Over\nLink: https://polymarket.com/event/nba-was-hou-2025-11-12\n\nMarket 3:\nTitle: Will J.D. Vance win the 2028 Republican presidential nomination?\nRecent trade: $819.00 on No\nLink: https://polymarket.com/event/republican-presidential-nominee-2028\n\nProvide predictions for each market in the specified format.",
+  "system_prompt": "You are a prediction market expert analyzing Polymarket markets.\nFor each market, provide your prediction in this exact format:\n\nMARKET [number]: [decision]\nReasoning: [brief 1-2 sentence explanation]\n\nDecision must be one of: YES, NO, or NO_TRADE\n- YES means you would bet on the \"Yes\" outcome\n- NO means you would bet on the \"No\" outcome\n- NO_TRADE means you would not take a position\n\nBe concise and focused on the most promising opportunities.",
+  "consensus_summary": "Error generating consensus summary: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****here is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}",
+  "model_mapping": {},
+  "responses": {
+    "claude": {
+      "response": null,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CV49hyavgUMg4H5SuapEn'}",
+      "response_time": 0.3,
+      "success": false
+    },
+    "xai": {
+      "response": null,
+      "error": "Error code: 400 - {'code': 'Client specified an invalid argument', 'error': 'Incorrect API key provided: xa***OZ. You can obtain an API key from https://console.x.ai.'}",
+      "response_time": 0.36,
+      "success": false
+    },
+    "deepseek": {
+      "response": null,
+      "error": "Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****here is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}",
+      "response_time": 0.75,
+      "success": false
+    },
+    "moonshot": {
+      "response": "Market 1: YES\nReasoning: Elon Musk is known for his active social media presence, and 160-179 tweets within a week isn't an unusually high number for him.\n\nMarket 2: NO\nReasoning: The Over/Under for this specific matchup seems a bit high considering the defensive capabilities of both teams and their average scores.\n\nMarket 3: NO_TRADE\nReasoning: J.D. Vance's political fortunes and influence by 2028 are highly uncertain, making this market speculative with significant risk.",
+      "response_time": 2.66,
+      "success": true
+    }
+  },
+  "metadata": {
+    "total_models": 4,
+    "successful_responses": 1,
+    "failed_responses": 3,
+    "total_time": 3.05
+  }
+}

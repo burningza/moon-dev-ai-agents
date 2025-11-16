@@ -5,7 +5,7 @@
 src/data/codetotext
 src/data/million_agent
 src/data/Arxiv
-.env
+src/.env
 dontshare.py
 **/dontshare.py
 secrets.json
@@ -113,19 +113,18 @@ src/data/web_search_research/
 src/data/videos/raw_vids/howtouseo3fortrading.mov
 src/data/videos/finished_clips
 src/audio
-/Users/md/Dropbox/dev/github/moon-dev-ai-agents-for-trading/src/data/agent_memory
-/Users/md/Dropbox/dev/github/moon-dev-ai-agents-for-trading/src/data/sentiment
-/Users/md/Dropbox/dev/github/moon-dev-ai-agents-for-trading/src/data/focus_history.csv
-/Users/md/Dropbox/dev/github/moon-dev-ai-agents-for-trading/src/data/private_data
-/Users/md/Dropbox/dev/github/moon-dev-ai-agents-for-trading/.replit
-/Users/md/Dropbox/dev/github/moon-dev-ai-agents-for-trading/.replit
+/src/data/agent_memory
+/src/data/sentiment
+/src/data/focus_history.csv
+/src/data/private_data
+.replit
 *.zshrc
-/Users/md/Dropbox/dev/github/moon-dev-ai-agents-for-trading/.zshrc
-src/data/solana_agent
-src/data/sniper_agent
-src/data/tx_agent
-src/data/swarm_agent
-/Users/md/Dropbox/dev/github/moon-dev-ai-agents-for-trading/src/data/videos/raw_clips
+.zshrc
+data/solana_agent
+data/sniper_agent
+data/tx_agent
+data/swarm_agent
+/src/data/videos
 
 # Project specific
 src/data/chat_agent/chat_history.csv

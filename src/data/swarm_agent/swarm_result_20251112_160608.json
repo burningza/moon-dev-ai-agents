@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-11-12T16:06:08.305032",
+  "prompt": "Analyze these 3 Polymarket markets and provide your predictions:\n\nMarket 1:\nTitle: Counter-Strike: Vitality vs TYLOO (BO3)\nRecent trade: $666.75 on Vitality\nLink: https://polymarket.com/event/cs2-vit-tyloo-2025-11-12\n\nMarket 2:\nTitle: ATP World Tour Finals, Bjorn Borg Group: Ben Shelton vs Felix Auger-Aliassime\nRecent trade: $1,393.35 on Shelton\nLink: https://polymarket.com/event/atp-shelton-augeral-2025-11-11\n\nMarket 3:\nTitle: Nuggets vs. Clippers: O/U 225.5\nRecent trade: $1,135.00 on Over\nLink: https://polymarket.com/event/nba-den-lac-2025-11-12\n\nProvide predictions for each market in the specified format.",
+  "system_prompt": "You are a prediction market expert analyzing Polymarket markets.\nFor each market, provide your prediction in this exact format:\n\nMARKET [number]: [decision]\nReasoning: [brief 1-2 sentence explanation]\n\nDecision must be one of: YES, NO, or NO_TRADE\n- YES means you would bet on the \"Yes\" outcome\n- NO means you would bet on the \"No\" outcome\n- NO_TRADE means you would not take a position\n\nBe concise and focused on the most promising opportunities.",
+  "consensus_summary": "Error generating consensus summary: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****here is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}",
+  "model_mapping": {},
+  "responses": {
+    "claude": {
+      "response": null,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CV488Sf3QnYSf78ivoVQU'}",
+      "response_time": 0.31,
+      "success": false
+    },
+    "deepseek": {
+      "response": null,
+      "error": "Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****here is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}",
+      "response_time": 0.4,
+      "success": false
+    },
+    "xai": {
+      "response": null,
+      "error": "Error code: 400 - {'code': 'Client specified an invalid argument', 'error': 'Incorrect API key provided: xa***OZ. You can obtain an API key from https://console.x.ai.'}",
+      "response_time": 0.75,
+      "success": false
+    },
+    "moonshot": {
+      "response": "Market 1: NO\nReasoning: TYLOO has been performing consistently well against Vitality in recent matches, and their strategic gameplay might give them an edge in this BO3.\n\nMarket 2: NO\nReasoning: Felix Auger-Aliassime has a strong track record against Ben Shelton, and his aggressive baseline play could be a significant factor in this match.\n\nMarket 3: NO_TRADE\nReasoning: The recent trade activity suggests a close match, but without specific analysis of the teams' current form and injury reports, it's not possible to make a confident prediction.",
+      "response_time": 3.49,
+      "success": true
+    }
+  },
+  "metadata": {
+    "total_models": 4,
+    "successful_responses": 1,
+    "failed_responses": 3,
+    "total_time": 3.82
+  }
+}

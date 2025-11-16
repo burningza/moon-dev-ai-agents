@@ -50,7 +50,8 @@ IGNORE_SPORTS_KEYWORDS = [
     'yankees', 'dodgers', 'red sox', 'mets',
     'premier league', 'la liga', 'champions league',
     'tennis', 'golf', 'nascar', 'formula 1', 'f1',
-    'cricket', 
+    'cricket', 'rugby', 'olympics', 'fifa', 'champion',
+
 ]
 
 # Agent behavior - REAL-TIME WebSocket + Analysis
@@ -62,8 +63,8 @@ REANALYSIS_HOURS = 8  # Re-analyze markets after this many hours (even if previo
 
 # AI Configuration
 USE_SWARM_MODE = True  # Use swarm AI (multiple models) instead of single XAI model
-AI_MODEL_PROVIDER = "xai"  # Model to use if USE_SWARM_MODE = False
-AI_MODEL_NAME = "grok-2-fast-reasoning"  # Model name if not using swarm
+AI_MODEL_PROVIDER = "moonshot"  # Model to use if USE_SWARM_MODE = False
+AI_MODEL_NAME = "kimi-k2-thinking"  # Model name if not using swarm
 SEND_PRICE_INFO_TO_AI = False  # Send market price/odds to AI models (True = include price, False = no price)
 
 # 🌙 Moon Dev - AI Prompts (customize these for your own edge!)

@@ -34,7 +34,7 @@ class ModelFactory:
         "ollama": OllamaModel,
         "xai": XAIModel,
         "openrouter": OpenRouterModel,
-        "moonshot": MoonshotModel  # 🌙 Add Moonshot support
+        "moonshot": MoonshotModel
     }
     
     # Default models for each type
@@ -47,7 +47,7 @@ class ModelFactory:
         "ollama": "llama3.2",
         "xai": "grok-4-fast-reasoning",
         "openrouter": "google/gemini-2.5-flash",
-        "moonshot": "moonshot-v1-128k"  # 🌙 Add Moonshot default
+        "moonshot": "moonshot-v1-128k"
     }
     
     def __init__(self):

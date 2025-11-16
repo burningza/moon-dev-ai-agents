@@ -46,7 +46,6 @@ import json
 import sys
 import os
 from pathlib import Path
-import codecs   # JLAKER: Added for UTF-8 handling
 import time
 import re
 import hashlib
@@ -62,11 +61,6 @@ from queue import Queue
 import requests
 from io import BytesIO
 
-# Force UTF-8 encoding for console output
-os.system('chcp 65001')  # Set console to UTF-8
-sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer)
-sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer)
-
 # Load environment variables FIRST
 load_dotenv()
 print("✅ Environment variables loaded")
@@ -80,8 +74,6 @@ root_dir = Path(__file__).resolve().parents[2]
 sys.path.append(str(root_dir))
 
 # Import model factory with proper path handling
-sys.path.append('/moon-dev-ai-agents-for-trading')
-
 try:
     from src.models import model_factory
     print("✅ Successfully imported model_factory")
@@ -111,7 +103,7 @@ RATE_LIMIT_GLOBAL_DELAY = 0.5  # Global delay between any API calls
 #   - Perfect for auto-generated strategies from web search agent!
 #
 STRATEGIES_FROM_FILES = False  # Set to True to read from folder instead of ideas.txt
-STRATEGIES_FOLDER = "/src/data/web_search_research/final_strategies"
+STRATEGIES_FOLDER = root_dir / "src/data/web_search_research/final_strategies"
 
 # Thread color mapping
 THREAD_COLORS = {
@@ -132,7 +124,7 @@ date_lock = Lock()  # 🌙 Moon Dev: Lock for date checking/updating
 rate_limiter = Semaphore(MAX_PARALLEL_THREADS)
 
 # 🌙 Moon Dev's Model Configurations
-# Available types: "claude", "openai", "deepseek", "groq", "gemini", "xai", "ollama", "openrouter"
+# Available types: "claude", "openai", "deepseek", "groq", "gemini", "xai", "ollama", "openrouter", "moonshot"
 #
 # OpenRouter Models (just set type="openrouter" and pick any model below):
 # - Gemini: google/gemini-2.5-pro, google/gemini-2.5-flash
@@ -145,32 +137,32 @@ rate_limiter = Semaphore(MAX_PARALLEL_THREADS)
 
 # 🧠 RESEARCH: Grok 4 Fast Reasoning (xAI's blazing fast model!)
 RESEARCH_CONFIG = {
-    "type": "gemini",
-    "name": "gemini-2.5-flash"
+    "type": "moonshot",
+    "name": "kimi-k2-thinking"
 }
 
 # 💻 BACKTEST CODE GEN: Grok 4 Fast Reasoning (xAI's blazing fast model!)
 BACKTEST_CONFIG = {
-    "type": "gemini",
-    "name": "gemini-2.5-flash"
+    "type": "moonshot",
+    "name": "kimi-k2-turbo-preview"
 }
 
 # 🐛 DEBUGGING: Grok 4 Fast Reasoning (xAI's blazing fast model!)
 DEBUG_CONFIG = {
-    "type": "gemini",
-    "name": "gemini-2.5-flash"
+    "type": "moonshot",
+    "name": "kimi-k2-0905-preview"
 }
 
 # 📦 PACKAGE CHECK: Grok 4 Fast Reasoning (xAI's blazing fast model!)
 PACKAGE_CONFIG = {
-    "type": "gemini",
-    "name": "gemini-2.5-flash"
+    "type": "moonshot",
+    "name": "kimi-k2-thinking-turbo"
 }
 
 # 🚀 OPTIMIZATION: Grok 4 Fast Reasoning (xAI's blazing fast model!)
 OPTIMIZE_CONFIG = {
-    "type": "gemini",
-    "name": "gemini-2.5-flash"
+    "type": "moonshot",
+    "name": "kimi-k2-turbo-preview"
 }
 
 # 🎯 PROFIT TARGET CONFIGURATION
@@ -537,12 +529,18 @@ Copy this EXACT template and replace YourStrategyClassName with your actual clas
 if __name__ == "__main__":
     import sys
     import os
+    from pathlib import Path # Added for portable path handling
     from backtesting import Backtest
     import pandas as pd
 
+    # Determine project root for portable path handling
+    # Assuming the generated script is saved 5 levels deep from the project root
+    # (e.g., project_root/src/data/rbi_pp_multi/DATE/backtests/TXX_Strategy_BT.py)
+    project_root = Path(__file__).resolve().parents[5]
+
     # FIRST: Run standard backtest and print stats (REQUIRED for parsing!)
     print("\\n🌙 Running initial backtest for stats extraction...")
-    data = pd.read_csv('/src/data/rbi/BTC-USD-15m.csv')
+    data = pd.read_csv(project_root / 'src/data/rbi/BTC-USD-15m.csv') # Corrected path
     data['datetime'] = pd.to_datetime(data['datetime'])
     data = data.set_index('datetime')
     data.columns = ['Open', 'High', 'Low', 'Close', 'Volume']
@@ -558,7 +556,7 @@ if __name__ == "__main__":
     print("="*80 + "\\n")
 
     # THEN: Run multi-data testing
-    sys.path.append('/Users/md/Dropbox/dev/github/moon-dev-trading-bots/backtests')
+    sys.path.append(str(project_root / 'src/data/backtests')) # Corrected path
     from multi_data_tester import test_on_all_data
 
     print("\\n" + "="*80)

@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-11-12T16:11:18.044111",
+  "prompt": "Analyze these 3 Polymarket markets and provide your predictions:\n\nMarket 1:\nTitle: Will Russia capture all of Vovchansk by December 31?\nRecent trade: $552.61 on No\nLink: https://polymarket.com/event/will-russia-capture-all-of-vovchansk-by\n\nMarket 2:\nTitle: Will Marco Rubio win the 2028 US Presidential Election?\nRecent trade: $1,440.00 on No\nLink: https://polymarket.com/event/presidential-election-winner-2028\n\nMarket 3:\nTitle: Counter-Strike: BOSS vs Marsborne (BO3)\nRecent trade: $581.25 on Marsborne\nLink: https://polymarket.com/event/cs2-boss-mars-2025-11-13\n\nProvide predictions for each market in the specified format.",
+  "system_prompt": "You are a prediction market expert analyzing Polymarket markets.\nFor each market, provide your prediction in this exact format:\n\nMARKET [number]: [decision]\nReasoning: [brief 1-2 sentence explanation]\n\nDecision must be one of: YES, NO, or NO_TRADE\n- YES means you would bet on the \"Yes\" outcome\n- NO means you would bet on the \"No\" outcome\n- NO_TRADE means you would not take a position\n\nBe concise and focused on the most promising opportunities.",
+  "consensus_summary": "Error generating consensus summary: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****here is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}",
+  "model_mapping": {},
+  "responses": {
+    "claude": {
+      "response": null,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CV48XL9Wk3Y3ajmYqEGYU'}",
+      "response_time": 0.33,
+      "success": false
+    },
+    "xai": {
+      "response": null,
+      "error": "Error code: 400 - {'code': 'Client specified an invalid argument', 'error': 'Incorrect API key provided: xa***OZ. You can obtain an API key from https://console.x.ai.'}",
+      "response_time": 0.73,
+      "success": false
+    },
+    "deepseek": {
+      "response": null,
+      "error": "Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****here is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}",
+      "response_time": 1.11,
+      "success": false
+    },
+    "moonshot": {
+      "response": "Market 1: NO\nReasoning: Given the ongoing conflict and the unpredictable nature of military engagements, it's uncertain if Russia will capture Vovchansk by the end of this year.\n\nMarket 2: NO\nReasoning: With many years to go until 2028, there are too many variables and unknowns to confidently predict a specific candidate's victory.\n\nMarket 3: NO_TRADE\nReasoning: As an esports match, the outcome is highly unpredictable and depends on numerous factors, making it unsuitable for a confident prediction.",
+      "response_time": 2.68,
+      "success": true
+    }
+  },
+  "metadata": {
+    "total_models": 4,
+    "successful_responses": 1,
+    "failed_responses": 3,
+    "total_time": 3.08
+  }
+}

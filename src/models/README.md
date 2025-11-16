@@ -61,6 +61,18 @@ Preview Models:
 - `deepseek-reasoner`: Enhanced reasoning model (Better for complex problem-solving)
 - `deepseek-r1`: DeepSeek's first-generation reasoning model (Excellent for trading strategies)
 
+### Moonshot Models
+Production Models:
+- `moonshot-v1-8k`: Ummm... I dunno
+- `moonshot-v1-32k`: Cough
+- `moonshot-v1-128k`: Cheap... I guess. I don't know what cheap is.
+- `kimi-k2-thinking`: Long-term thinking Kimi K2 version, supports 256k context, supports multi-step tool usage and reasoning, excels at solving more complex problems
+- `kimi-k2-thinking-turbo`: High-speed version of the long-thinking Kimi K2 model. Supports a 256K context window, delivers stronger reasoning abilities, and increases output speed to 60-100 tokens per second.
+
+Preview Models:
+- `kimi-k2-0905-preview`: The latest Kimi K2 version, supports 256K context window (2025-11-12)
+- `kimi-k2-turbo-preview`: High-speed Kimi K2 version, up to 60-100 tokens/s, ideal for enterprise and high-responsiveness agent applications
+
 ### Local Ollama: Free, Fast, Private LLMs 🚀
 
 To get started with Ollama:
@@ -102,7 +114,7 @@ model = factory.get_model("ollama", "deepseek-r1")
 model = factory.get_model("ollama", "gemma:2b")
 
 # Or Kimi K2 Thinking for advanced reasoning
-model = factory.get_model("ollama", "kimi-k2-thinking")
+model = factory.get_model("moonshot", "kimi-k2-thinking")
 
 # For the most powerful reasoning, use DeepSeek API
 model = factory.get_model("deepseek", "deepseek-reasoner")

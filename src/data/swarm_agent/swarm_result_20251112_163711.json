@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-11-12T16:37:11.328828",
+  "prompt": "Analyze these 3 Polymarket markets and provide your predictions:\n\nMarket 1:\nTitle: Buffalo vs. Central Michigan\nRecent trade: $1,200.00 on Buffalo\nLink: https://polymarket.com/event/cfb-buf-cmich-2025-11-12\n\nMarket 2:\nTitle: Lighter market cap (FDV) >$6B one day after launch?\nRecent trade: $2,041.37 on Yes\nLink: https://polymarket.com/event/lighter-market-cap-fdv-one-day-after-launch\n\nMarket 3:\nTitle: Will Microsoft (MSFT) finish week of November 10 above $470?\nRecent trade: $895.91 on Yes\nLink: https://polymarket.com/event/msft-above-on-november-14-2025\n\nProvide predictions for each market in the specified format.",
+  "system_prompt": "You are a prediction market expert analyzing Polymarket markets.\nFor each market, provide your prediction in this exact format:\n\nMARKET [number]: [decision]\nReasoning: [brief 1-2 sentence explanation]\n\nDecision must be one of: YES, NO, or NO_TRADE\n- YES means you would bet on the \"Yes\" outcome\n- NO means you would bet on the \"No\" outcome\n- NO_TRADE means you would not take a position\n\nBe concise and focused on the most promising opportunities.",
+  "consensus_summary": "Error generating consensus summary: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****here is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}",
+  "model_mapping": {},
+  "responses": {
+    "claude": {
+      "response": null,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CV4AVop5sqWE2k1sx49CJ'}",
+      "response_time": 0.32,
+      "success": false
+    },
+    "xai": {
+      "response": null,
+      "error": "Error code: 400 - {'code': 'Client specified an invalid argument', 'error': 'Incorrect API key provided: xa***OZ. You can obtain an API key from https://console.x.ai.'}",
+      "response_time": 0.71,
+      "success": false
+    },
+    "deepseek": {
+      "response": null,
+      "error": "Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****here is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}",
+      "response_time": 0.87,
+      "success": false
+    },
+    "moonshot": {
+      "response": "Market 1: NO\nReasoning: Considering the recent trade volume and the lack of information on team form or conditions, it's safer to assume the underdog will not win.\n\nMarket 2: NO_TRADE\nReasoning: Without additional information on the project or market conditions, it's difficult to make an informed prediction about the market cap post-launch.\n\nMarket 3: NO\nReasoning: The recent trade skews towards \"Yes\", but without current stock price data or market trends, it's hard to justify betting on MSFT finishing above $470.",
+      "response_time": 3.03,
+      "success": true
+    }
+  },
+  "metadata": {
+    "total_models": 4,
+    "successful_responses": 1,
+    "failed_responses": 3,
+    "total_time": 3.35
+  }
+}

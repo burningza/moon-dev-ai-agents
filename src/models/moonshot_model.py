@@ -8,21 +8,26 @@ Moonshot is a powerful reasoning model optimized for complex analysis.
 Docs: https://platform.moonshot.ai/docs/overview
 """
 
-import requests
+from openai import OpenAI
 from termcolor import cprint
 from .base_model import BaseModel, ModelResponse
 
 class MoonshotModel(BaseModel):
     """Implementation for Moonshot API models"""
     
-    # Available Moonshot models
+    # Available Moonshot models 
+    # From here https://platform.moonshot.ai/docs/guide/kimi-k2-quickstart#recommended-api-versions
     AVAILABLE_MODELS = [
         "moonshot-v1-8k",
         "moonshot-v1-32k",
-        "moonshot-v1-128k",  # Recommended for complex reasoning
+        "moonshot-v1-128k",
+        "kimi-k2-thinking",
+        "kimi-k2-thinking-turbo",  # Recommended for complex reasoning
+        "kimi-k2-0905-preview",
+        "kimi-k2-turbo-preview"
     ]
     
-    def __init__(self, api_key=None, model_name="moonshot-v1-128k"):
+    def __init__(self, api_key=None, model_name="kimi-k2-thinking"):
         """Initialize Moonshot model
         
         Args:
@@ -42,34 +47,14 @@ class MoonshotModel(BaseModel):
             raise ValueError("MOONSHOT_API_KEY not configured")
         
         try:
-            # Test the connection with a simple request
-            headers = {
-                "Authorization": f"Bearer {self.api_key}",
-                "Content-Type": "application/json"
-            }
-            
-            # Make a test request
-            response = requests.get(
-                f"{self.base_url}/models",
-                headers=headers,
-                timeout=5
+            self.client = OpenAI(
+                api_key=self.api_key,
+                base_url=self.base_url,
             )
-            
-            if response.status_code == 401:
-                cprint("❌ Moonshot authentication failed!", "white", "on_red")
-                cprint("   Invalid or expired API key", "yellow")
-                raise ValueError("Invalid Moonshot API key")
-            elif response.status_code != 200:
-                cprint(f"❌ Moonshot API error: {response.status_code}", "white", "on_red")
-                raise Exception(f"Moonshot API returned {response.status_code}")
-            
+            # Test the connection by listing models
+            self.client.models.list()
             cprint(f"✨ Successfully connected to Moonshot API", "green")
             cprint(f"   Model: {self.model_name}", "cyan")
-            
-        except requests.exceptions.ConnectionError:
-            cprint("❌ Failed to connect to Moonshot API", "white", "on_red")
-            cprint("   Check your internet connection", "yellow")
-            raise
         except Exception as e:
             cprint(f"❌ Error initializing Moonshot: {str(e)}", "white", "on_red")
             raise
@@ -82,16 +67,8 @@ class MoonshotModel(BaseModel):
     def is_available(self):
         """Check if the model is available"""
         try:
-            headers = {
-                "Authorization": f"Bearer {self.api_key}",
-                "Content-Type": "application/json"
-            }
-            response = requests.get(
-                f"{self.base_url}/models",
-                headers=headers,
-                timeout=5
-            )
-            return response.status_code == 200
+            self.client.models.list()
+            return True
         except:
             return False
     
@@ -109,67 +86,26 @@ class MoonshotModel(BaseModel):
             ModelResponse object with the generated content
         """
         try:
-            headers = {
-                "Authorization": f"Bearer {self.api_key}",
-                "Content-Type": "application/json"
-            }
-            
-            # Prepare the request payload
-            payload = {
-                "model": self.model_name,
-                "messages": [
-                    {
-                        "role": "system",
-                        "content": system_prompt
-                    },
-                    {
-                        "role": "user",
-                        "content": user_content
-                    }
+            completion = self.client.chat.completions.create(
+                model=self.model_name,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_content}
                 ],
-                "temperature": temperature,
-            }
-            
-            # Add optional parameters
-            if max_tokens:
-                payload["max_tokens"] = max_tokens
-            
-            # Make the API request
-            response = requests.post(
-                f"{self.base_url}/chat/completions",
-                headers=headers,
-                json=payload,
-                timeout=30
+                temperature=temperature,
+                max_tokens=max_tokens,
             )
-            
-            # Handle response
-            if response.status_code == 401:
-                raise Exception("Moonshot API error: 401 - Unauthorized (invalid API key)")
-            elif response.status_code != 200:
-                error_data = response.json() if response.text else {}
-                error_msg = error_data.get("error", {}).get("message", f"Status {response.status_code}")
-                raise Exception(f"Moonshot API error: {error_msg}")
-            
-            # Parse response
-            data = response.json()
-            
-            if "choices" not in data or not data["choices"]:
-                raise Exception("No response from Moonshot API")
-            
-            content = data["choices"][0]["message"]["content"]
+
+            content = completion.choices[0].message.content
             
             # Return as ModelResponse
             return ModelResponse(
                 content=content,
-                raw_response=data,
+                raw_response=completion.model_dump(),
                 model_name=self.model_name,
-                usage={"total_tokens": data.get("usage", {}).get("total_tokens", 0)}
+                usage={"total_tokens": completion.usage.total_tokens}
             )
             
-        except requests.exceptions.Timeout:
-            raise Exception("Moonshot API request timed out")
-        except requests.exceptions.ConnectionError:
-            raise Exception("Failed to connect to Moonshot API")
         except Exception as e:
             raise Exception(f"Moonshot API error: {str(e)}")
     
@@ -192,6 +128,10 @@ class MoonshotModel(BaseModel):
             },
             "moonshot-v1-128k": {
                 "context_window": 128000,
+                "max_output_tokens": 8000,
+            },
+            "kimi-k2-thinking": {
+                "context_window": 256000,
                 "max_output_tokens": 8000,
             },
         }

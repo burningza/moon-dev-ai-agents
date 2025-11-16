@@ -79,6 +79,7 @@ SWARM_MODELS = {
     #"openrouter_deepseek_r1": (True, "openrouter", "deepseek/deepseek-r1-0528"),  # DeepSeek R1 - Advanced reasoning ($0.55/$2.19 per 1M tokens)
     #"openrouter_claude_opus": (True, "openrouter", "anthropic/claude-opus-4.1"),  # Claude Opus 4.1 via OpenRouter
     "openrouter_gpt5_mini": (True, "openrouter", "openai/gpt-5-mini"),  # GPT-5 Mini via OpenRouter
+    "moonshot": (True, "moonshot", "moonshot-v1-128k"),
 
     # 💡 See all 200+ models at: https://openrouter.ai/docs
     # 💡 Any model from openrouter_model.py can be used here!
