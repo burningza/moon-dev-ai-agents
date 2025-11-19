@@ -726,6 +726,7 @@ analysis_timestamp,analysis_run_id,market_title,market_slug,claude_prediction,op
 2025-11-07T14:10:04.960840,20251107_141004,Will Mamdani freeze NYC rents before 2027?,will-mamdani-freeze-nyc-rents-before-2027,NO,,,,NO,NO,,NO (100%),5,https://polymarket.com/event/will-mamdani-freeze-nyc-rents-before-2027
 2025-11-07T14:10:04.960840,20251107_141004,Wild vs. Islanders,nhl-min-nyi-2025-11-07,NO_TRADE,,,,NO_TRADE,NO_TRADE,,NO_TRADE (100%),5,https://polymarket.com/event/nhl-min-nyi-2025-11-07
 2025-11-07T14:10:04.960840,20251107_141004,ECB rate cut in 2025?,ecb-rate-cut-in-2025,YES,,,,NO,YES,,YES (60%),5,https://polymarket.com/event/ecb-rate-cut-in-2025
+<<<<<<< HEAD
 2025-11-12T16:06:04.485542,20251112_160604,Counter-Strike: Vitality vs TYLOO (BO3),cs2-vit-tyloo-2025-11-12,N/A,N/A,N/A,N/A,N/A,N/A,N/A,NO (100%),1,https://polymarket.com/event/cs2-vit-tyloo-2025-11-12
 2025-11-12T16:06:04.485542,20251112_160604,"ATP World Tour Finals, Bjorn Borg Group: Ben Shelton vs Felix Auger-Aliassime",atp-shelton-augeral-2025-11-11,N/A,N/A,N/A,N/A,N/A,N/A,N/A,NO (100%),1,https://polymarket.com/event/atp-shelton-augeral-2025-11-11
 2025-11-12T16:06:04.485542,20251112_160604,Nuggets vs. Clippers: O/U 225.5,nba-den-lac-2025-11-12,N/A,N/A,N/A,N/A,N/A,N/A,N/A,NO_TRADE (100%),1,https://polymarket.com/event/nba-den-lac-2025-11-12
@@ -750,3 +751,14 @@ analysis_timestamp,analysis_run_id,market_title,market_slug,claude_prediction,op
 2025-11-12T16:42:18.017636,20251112_164218,Trump announces new drug boat strike by November 22?,trump-announces-new-drug-boat-strike-by-971,N/A,N/A,N/A,N/A,N/A,N/A,N/A,NO (100%),1,https://polymarket.com/event/trump-announces-new-drug-boat-strike-by-971
 2025-11-12T16:42:18.017636,20251112_164218,Will Ariana Grande win Best Supporting Actress at the 98th Academy Awards?,oscars-2026-best-supporting-actress-winner,N/A,N/A,N/A,N/A,N/A,N/A,N/A,NO_TRADE (100%),1,https://polymarket.com/event/oscars-2026-best-supporting-actress-winner
 2025-11-12T16:42:18.017636,20251112_164218,"Thailand x Cambodia military engagement by November 30, 2025?",thailand-x-cambodia-military-engagement-by-832,N/A,N/A,N/A,N/A,N/A,N/A,N/A,NO (100%),1,https://polymarket.com/event/thailand-x-cambodia-military-engagement-by-832
+=======
+2025-11-12T08:25:55.215440,20251112_082555,Will Jeannette Jara win the 1st round of the 2025 Chilean presidential election?,chile-presidential-election-1st-round-winner,NO_TRADE,N/A,N/A,N/A,NO_TRADE,NO,N/A,NO_TRADE (66%),6,https://polymarket.com/event/chile-presidential-election-1st-round-winner
+2025-11-12T08:25:55.215440,20251112_082555,Will Elche CF vs. Real Sociedad end in a draw?,lal-elc-rso-2025-11-07,NO,N/A,N/A,N/A,NO,NO,N/A,NO (66%),6,https://polymarket.com/event/lal-elc-rso-2025-11-07
+2025-11-12T08:25:55.215440,20251112_082555,"Will Elon Musk post 240-259 tweets from November 11 to November 18, 2025?",elon-musk-of-tweets-november-11-november-18,NO_TRADE,N/A,N/A,N/A,YES,NO,N/A,NO (50%),6,https://polymarket.com/event/elon-musk-of-tweets-november-11-november-18
+2025-11-12T08:31:27.635820,20251112_083127,Will Russia capture Rivnopillia by November 30?,will-russia-capture-rivnopillia-by-november-30,NO_TRADE,N/A,N/A,N/A,NO,NO,N/A,NO (80%),5,https://polymarket.com/event/will-russia-capture-rivnopillia-by-november-30
+2025-11-12T08:31:27.635820,20251112_083127,Suns vs. Mavericks,nba-phx-dal-2025-11-12,NO_TRADE,N/A,N/A,N/A,NO_TRADE,YES,N/A,NO_TRADE (80%),5,https://polymarket.com/event/nba-phx-dal-2025-11-12
+2025-11-12T08:31:27.635820,20251112_083127,"ATP World Tour Finals, Bjorn Borg Group: Jannik Sinner vs Alexander Zverev",atp-sinner-zverev-2025-11-09,NO_TRADE,N/A,N/A,N/A,YES,YES,N/A,YES (80%),5,https://polymarket.com/event/atp-sinner-zverev-2025-11-09
+2025-11-12T08:36:59.032600,20251112_083659,Wizards vs. Rockets: O/U 234.5,nba-was-hou-2025-11-12,NO_TRADE,N/A,N/A,N/A,NO,NO,N/A,NO (66%),6,https://polymarket.com/event/nba-was-hou-2025-11-12
+2025-11-12T08:36:59.032600,20251112_083659,Wizards vs. Rockets: O/U 233.5,nba-was-hou-2025-11-12,NO_TRADE,N/A,N/A,N/A,NO,NO,N/A,NO (50%),6,https://polymarket.com/event/nba-was-hou-2025-11-12
+2025-11-12T08:36:59.032600,20251112_083659,Rangers vs. Lightning,nhl-nyr-tb-2025-11-12,NO_TRADE,N/A,N/A,N/A,YES,YES,N/A,YES (66%),6,https://polymarket.com/event/nhl-nyr-tb-2025-11-12
+>>>>>>> upstream/main
